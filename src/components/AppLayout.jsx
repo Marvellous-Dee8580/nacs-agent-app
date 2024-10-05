@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { Layout, Menu } from 'antd'; // If using Ant Design
-const { Header, Content, Footer } = Layout;
+import { Layout as AntLayout, Menu } from 'antd'; // Renaming Layout from Ant Design to AntLayout to avoid conflict
+const { Header, Content, Footer } = AntLayout;
 
-const Layout = () => {
+const AppLayout = () => {
   return (
-    <Layout>
+    <AntLayout>
       <Header>
         <Menu theme="dark" mode="horizontal">
           <Menu.Item key="1"><Link to="/dashboard">Dashboard</Link></Menu.Item>
@@ -18,8 +18,8 @@ const Layout = () => {
         <Outlet />
       </Content>
       <Footer style={{ textAlign: 'center' }}>Merchant Agent App ©2024</Footer>
-    </Layout>
+    </AntLayout>
   );
 };
 
-export default Layout;
+export default AppLayout;
